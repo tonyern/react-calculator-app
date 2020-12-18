@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Clear.css'
 
 class Clear extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Clear extends Component {
     render() {
         return (
             <div>
-                <button>Clear</button>
+                <button type="button" id="clear-btn"><h1>CLEAR</h1></button>
             </div>
         );
     }

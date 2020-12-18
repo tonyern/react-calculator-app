@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Button.css';
 
 class Button extends Component {
     constructor(props) {
@@ -9,31 +10,31 @@ class Button extends Component {
         return (
             <div>
                 <div>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>/</button>
+                    <button type="button" className="calculator-btn"><h1>7</h1></button>
+                    <button type="button" className="calculator-btn"><h1>8</h1></button>
+                    <button type="button" className="calculator-btn"><h1>9</h1></button>
+                    <button type="button" className="calculator-btn operator"><h1>/</h1></button>
                 </div>
 
                 <div>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>X</button>
+                    <button type="button" className="calculator-btn"><h1>4</h1></button>
+                    <button type="button" className="calculator-btn"><h1>5</h1></button>
+                    <button type="button" className="calculator-btn"><h1>6</h1></button>
+                    <button type="button" className="calculator-btn operator"><h1>X</h1></button>
                 </div>
 
                 <div>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>+</button>
+                    <button type="button" className="calculator-btn"><h1>1</h1></button>
+                    <button type="button" className="calculator-btn"><h1>2</h1></button>
+                    <button type="button" className="calculator-btn"><h1>3</h1></button>
+                    <button type="button" className="calculator-btn operator"><h1>+</h1></button>
                 </div>
 
                 <div>
-                    <button>.</button>
-                    <button>0</button>
-                    <button>=</button>
-                    <button>-</button>
+                    <button type="button" className="calculator-btn"><h1>.</h1></button>
+                    <button type="button" className="calculator-btn"><h1>0</h1></button>
+                    <button type="button" className="calculator-btn"><h1>=</h1></button>
+                    <button type="button" className="calculator-btn operator"><h1>-</h1></button>
                 </div>
             </div>
         );
