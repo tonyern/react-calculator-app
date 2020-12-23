@@ -6,10 +6,14 @@ class Clear extends Component {
         super(props);
     }
 
+    clearInput = () => {
+        console.log('Clearing input');
+    }
+
     render() {
         return (
             <div>
-                <button type="button" id="clear-btn"><h1>CLEAR</h1></button>
+                <button type="button" id="clear-btn" onClick={this.clearInput}><h1>CLEAR</h1></button>
             </div>
         );
     }
