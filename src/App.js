@@ -13,7 +13,6 @@ class App extends Component {
       number1: "",
       operator: "",
       number2: "",
-      result: ""
     };
   }
 
@@ -24,6 +23,15 @@ class App extends Component {
       currentEntry: this.state.currentEntry + number
     });
   }
+
+  decimalInput = (decimal) => {
+    if (this.state.currentEntry.indexOf('.') === -1 || this.state.displayInput.indexOf('.') === -1) {
+      this.setState({
+        currentEntry: this.state.currentEntry + decimal,
+        displayInput: this.state.displayInput + decimal
+      })
+    }
+  };
 
   operatorInput = (symbol) => {
     console.log(symbol + ' was pressed');
@@ -37,13 +45,30 @@ class App extends Component {
     });
   }
 
-  evaluateInput = (equals) => {
+  evaluateInput = () => {
     console.log('Evaluating inputs');
+
+    var compute;
+    if (this.state.operator === '+') {
+      compute = parseInt(this.state.number1) + parseInt(this.state.number2);
+    } else if (this.state.operator === '-') {
+      compute = parseInt(this.state.number1) - parseInt(this.state.number2);
+    } else if (this.state.operator === '*') {
+      compute = parseInt(this.state.number1) * parseInt(this.state.number2);
+    } else if (this.state.operator === '/') {
+      if (this.state.number2 !== '0') {
+        compute = parseInt(this.state.number1) / parseInt(this.state.number2);
+      } else {
+        compute = "Cannot divide by 0";
+      }
+    }
+    
+    compute.toString();
+    
     this.setState({
       number2: this.state.currentEntry,
-      currentEntry: "",
-      result: parseInt(this.state.number1) + parseInt(this.state.number2),
-      displayInput: this.state.displayInput + equals + this.state.result
+      displayInput: compute,
+      currentEntry: ""
     });
   }
 
@@ -58,7 +83,7 @@ class App extends Component {
     return (
       <div>
         <Input><strong>{this.state.displayInput}</strong></Input>
-        <Button addNumber={this.numberInput} operation={this.operatorInput} evaluate={this.evaluateInput} />
+        <Button addNumber={this.numberInput} addDecimal={this.decimalInput} operation={this.operatorInput} evaluate={this.evaluateInput} />
         <Clear clear={this.clearInput} />
       </div>
     );

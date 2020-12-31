@@ -40,11 +40,11 @@ class Button extends Component {
 
                 <div>
                     <button type="button" className="calculator-btn"
-                        onClick={() => this.props.addNumber('.')}><h1>.</h1></button>
+                        onClick={() => this.props.addDecimal('.')}><h1>.</h1></button>
                     <button type="button" className="calculator-btn"
                         onClick={() => this.props.addNumber("0")}><h1>0</h1></button>
                     <button type="button" className="calculator-btn"
-                        onClick={() => this.props.evaluate('=')}><h1>=</h1></button>
+                        onClick={() => this.props.evaluate()}><h1>=</h1></button>
                     <button type="button" className="calculator-btn operator"
                         onClick={() => this.props.operation('-')}><h1>-</h1></button>
                 </div>
