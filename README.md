@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# About
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This is a simple calculator. It computes two numbers at a time. It can add, subtract, multiple, and divide. Decimals can be used in the calculator app as well.
+
+![React Calculator UI](public/react-calculator-ui.png)
+
+![React Calculator in Use](public/react-calculator-in-use.png)
+
+## Implementations Explained
+
+There are four classes used: App (Main), Input (Display of what user entered and results of computation), Button (Numbers, decimal, operators, clear, equals), and Clear.
 
 ## Available Scripts
 
