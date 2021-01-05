@@ -18,6 +18,7 @@ class App extends Component {
 
   numberInput = (number) => {
     console.log(number + ' was pressed');
+
     this.setState({
       displayInput: this.state.displayInput + number,
       currentEntry: this.state.currentEntry + number
@@ -63,19 +64,23 @@ class App extends Component {
       }
     }
     
-    compute.toString();
-    
-    this.setState({
-      number2: this.state.currentEntry,
-      displayInput: compute,
-      currentEntry: ""
-    });
+    if (typeof compute !== "undefined") {
+      this.setState({
+        number2: this.state.currentEntry,
+        displayInput: compute.toString(),
+        currentEntry: ""
+      });
+    }
   }
 
   clearInput = () => {
     console.log('Clearing input');
     this.setState({
-      displayInput: ""
+      displayInput: "",
+      currentEntry: "",
+      number1: "",
+      operator: "",
+      number2: ""
     });
   }
 
