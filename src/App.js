@@ -53,6 +53,8 @@ class App extends Component {
     console.log("Evaluating inputs");
 
     let compute;
+    // number2 not set.
+    console.log(this.state.number1 + this.state.operator + this.state.number2);
     if (this.state.operator === "+") {
       compute = parseInt(this.state.number1) + parseInt(this.state.number2);
     } else if (this.state.operator === "-") {
@@ -71,7 +73,6 @@ class App extends Component {
       this.setState({
         number2: this.state.currentEntry,
         displayInput: compute.toString(),
-        currentEntry: "",
       });
     }
   };
