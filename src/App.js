@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Input from "./components/Input";
-import Button from "./components/Button";
-import Clear from "./components/Clear";
+import Input from "./components/Input/Input";
+import Button from "./components/Button/Button";
+import Clear from "./components/Clear/Clear";
 
 class App extends Component {
   constructor(props) {
