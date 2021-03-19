@@ -90,7 +90,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Input>
           <strong>{this.state.displayInput}</strong>
         </Input>
@@ -101,7 +101,7 @@ class App extends Component {
           evaluate={this.evaluateInput}
         />
         <Clear clear={this.clearInput} />
-      </div>
+      </>
     );
   }
 }
