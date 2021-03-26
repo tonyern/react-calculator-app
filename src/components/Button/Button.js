@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./Button.css";
 
 class Button extends Component {
   render() {
     return (
-      <div>
+      <>
         <div>
           <button
             type="button"
@@ -128,7 +128,7 @@ class Button extends Component {
             <h1>-</h1>
           </button>
         </div>
-      </div>
+      </>
     );
   }
 }
