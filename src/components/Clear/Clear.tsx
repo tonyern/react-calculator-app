@@ -5,6 +5,7 @@ class Clear extends Component {
   render() {
     return (
       <div>
+        {/** @ts-ignore */}
         <button type="button" id="clear-btn" onClick={() => this.props.clear()}>
           <h1>CLEAR</h1>
         </button>

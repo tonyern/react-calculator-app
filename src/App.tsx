@@ -1,10 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import Input from "./components/Input/Input";
 import Button from "./components/Button/Button";
 import Clear from "./components/Clear/Clear";
 
-class App extends Component {
-  constructor(props) {
+interface InterfaceProps {
+}
+
+interface InterfaceState {
+  displayInput: string;
+  currentEntry: string;
+  number1: string;
+  operator: string;
+  number2: string;
+}
+
+class App extends React.Component<InterfaceProps, InterfaceState> {
+  constructor(props: InterfaceProps) {
     super(props);
 
     this.state = {
@@ -16,7 +27,7 @@ class App extends Component {
     };
   }
 
-  numberInput = (number) => {
+  numberInput = (number : string): void => {
     console.log(number + " was pressed");
 
     this.setState({
@@ -25,7 +36,7 @@ class App extends Component {
     });
   };
 
-  decimalInput = (decimal) => {
+  decimalInput = (decimal: string): void => {
     if (
       this.state.currentEntry.indexOf(".") === -1 ||
       this.state.displayInput.indexOf(".") === -1
@@ -37,7 +48,7 @@ class App extends Component {
     }
   };
 
-  operatorInput = (symbol) => {
+  operatorInput = (symbol: string): void => {
     console.log(symbol + " was pressed");
 
     // As soon as operator is selected, set first number.
@@ -49,7 +60,7 @@ class App extends Component {
     });
   };
 
-  evaluateInput = () => {
+  evaluateInput = (): void => {
     console.log("Evaluating inputs");
 
     let compute;
@@ -77,7 +88,7 @@ class App extends Component {
     }
   };
 
-  clearInput = () => {
+  clearInput = (): void => {
     console.log("Clearing input");
     this.setState({
       displayInput: "",
@@ -100,6 +111,7 @@ class App extends Component {
           operation={this.operatorInput}
           evaluate={this.evaluateInput}
         />
+        {/** @ts-ignore */}
         <Clear clear={this.clearInput} />
       </>
     );
